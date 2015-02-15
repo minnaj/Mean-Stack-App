@@ -1,0 +1,1 @@
+angular.module( 'velaton', ['ui.router', 'appRoutes', 'MainCtrl', 'DebtCtrl', 'DebtService'] );

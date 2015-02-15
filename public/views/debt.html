@@ -1,0 +1,28 @@
+<div class="jumbotron text-center" ng-cloak>
+	<h2>Add new</h2>
+
+	<form class="form-horizontal" name="debtForm">
+	  	<div class="form-group row">
+	  		<label for="inputName" class="col-sm-5 control-label">Name:</label>
+	  		<div class="col-sm-3">
+	    	<input type="text" class="form-control" name="inputName" required ng-model="debtName" ng-maxlength="30">
+	    	</div>
+	  	</div>
+
+	  	<div class="form-group row">
+	    	<label for="inputAmount" class="col-sm-5 control-label">Amount:</label>
+	    	<div class="col-sm-3">
+	    	<input type="text" class="form-control" name="inputAmount" required ng-model="debtAmount" ng-maxlength="7">
+	    	</div>
+	  	</div>
+
+		<div class="form-group row">
+	    	<label for="inputText" class="col-sm-5 control-label">Description:</label>
+	    	<div class="col-sm-3">
+	    	<input type="text" class="form-control" name="inputText" ng-model="debtDescription" ng-maxlength="50">
+	    	</div>
+	  	</div>
+
+	  	<button type="submit" class="btn btn-default" ng-click="newDebt()">Save</button>
+	</form>
+</div>

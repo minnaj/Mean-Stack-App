@@ -1,0 +1,89 @@
+body {
+	background-color: #BBBFBF;
+}
+
+a {
+  color: #40ABAB;
+}
+
+h3, h2 {
+	color: #FF9900;
+  margin-bottom: 20px;
+}
+
+.jumbotron {
+	color: black;
+	background-color: #F5F5F5;
+}
+
+.navbar {
+	background-color: #424242;
+	border-color: #424242;
+	border-width: 2px;
+}
+
+.navbar-text {
+    margin-left: 15px;
+}
+
+.navbar-inverse .navbar-text {
+	color: #F38630;
+}
+
+.navbar-inverse .navbar-brand {
+  color: #FF9900;
+  font-size: 24px;
+}
+.navbar-inverse .navbar-brand:hover,
+.navbar-inverse .navbar-brand:focus {
+  color: #40CBCB;
+  background-color: transparent;
+}
+.navbar-inverse .navbar-text {
+  color: #40CBCB;
+}
+.navbar-inverse .navbar-nav > li > a {
+  color: #E9E9E9;
+}
+.navbar-inverse .navbar-nav > li > a:hover,
+.navbar-inverse .navbar-nav > li > a:focus {
+  color: #40CBCB;
+  background-color: transparent;
+}
+.navbar-inverse .navbar-link {
+  color: #40CBCB;
+}
+.navbar-inverse .navbar-link:hover {
+  color: #FF9900;
+}
+
+
+
+.table > thead > tr > th,
+.table > tbody > tr > th,
+.table > tfoot > tr > th,
+.table > thead > tr > td,
+.table > tbody > tr > td,
+.table > tfoot > tr > td {
+  border-color: #BBBFBF;
+  border-width: 2px;
+}
+
+.table-striped > tbody > tr:nth-child(2n+1) > td, 
+.table-striped > tbody > tr:nth-child(2n+1) > th {
+   background-color: #F5F5F5;
+}
+.table-striped > tbody > tr:nth-child(2n) > td, 
+.table-striped > tbody > tr:nth-child(2n) > th {
+   background-color: #F5F5F5;
+}
+
+.table-striped > tbody > tr:nth-child(1) > td, 
+.table-striped > tbody > tr:nth-child(1) > th {
+   background-color: #BBBFBF;
+   color: black;
+}
+
+.mybuttoncolumn {
+  width: 170px;
+}

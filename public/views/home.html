@@ -1,0 +1,21 @@
+<div class="jumbotron text-center" ng-cloak>
+	<h2>All debts</h2>
+
+	<div class="table-responsive">
+		<table class="table table-condensed table-striped table-bordered">
+			<tr>
+				<th>Name</th>
+				<th>Amount</th>
+				<th></th>
+				<th>Last edited</th>
+			</tr>
+			<tr ng-repeat="item in debts | filter:{ amount: '!0.00' }">
+				<td><a href="/{{ item.debtID }}">{{ item.name }}</td>
+				<td>{{ item.amount }}</td>
+				<td class="mybuttoncolumn"><button class="btn btn-default" style="color:#40ABAB">Pay</button> 
+					<button class="btn btn-default" style="color:#FF9900">Delete</button></td>
+				<td>{{ item.edited }}</td>
+			</tr>
+		</table>
+	</div>
+</div>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="velaton">
+	<head>
+		<meta charset="UTF-8">
+		<base href="/">
+		<title>VelatON</title>
+
+    	<link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap.min.css">
+    	<link rel="stylesheet" href="libs/font-awesome/css/font-awesome.min.css">
+		<link rel="stylesheet" href="css/style.css">
+
+		<script src="libs/angular/angular.js"></script>
+		<script src="libs/angular-ui-router/release/angular-ui-router.min.js"></script>
+
+		<script src="js/controllers/MainCtrl.js"></script>
+		<script src="js/controllers/DebtCtrl.js"></script>
+		<script src="js/services/DebtService.js"></script>
+		<script src="js/appRoutes.js"></script>
+		<script src="js/app.js"></script>
+	</head>
+
+	<body>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<script src="libs/bootstrap/dist/js/bootstrap.min.js"></script>
+			
+		<div class="container">
+		<!-- Navigation bar -->
+		<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container"> <!--ng-controller="NavController as navctrl">-->
+		    <div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" 
+					data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+		        <span class="sr-only">Toggle navigation</span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		      </button>
+		      <a class="navbar-brand" ui-sref="secured.home">VelatON</a>
+		    </div>
+
+		    <div id="navbar" class="navbar-collapse collapse">
+		    	<ul class="nav navbar-nav">
+		    		<li><a ui-sref="secured.addNew">Add new</a></li>
+		    		<!-- <li><a ui-sref="secured.home">Link</a></li> -->
+
+				</ul>
+		    	<ul class="nav navbar-nav navbar-right">
+		    		<li class="nav-divider"></li>
+		    		<li><p class="navbar-text">{{ $root.headerInfo }}</p></li>
+		        	<li ng-if="$root.loggedIn"><a ui-sref="secured.logout">Logout</a></li>
+		      	</ul>
+		    </div> <!-- navbar-collapse -->
+		</div> <!-- container-fluid -->
+		</nav>
+
+		<!-- Dynamic content -->
+		<p><div ui-view></div></p>
+		</div>
+	</body>
+</html>
