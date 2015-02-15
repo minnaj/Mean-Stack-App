@@ -12,7 +12,7 @@ angular.module( 'MainCtrl', ['ui.router'] )
 		if( data.length > 0 ){ // Loop through all debts
 			data.forEach( function( item ){
 				found = false;
-
+				console.log( item.amount );
 				if( $scope.debts.length == 0 ){
 					// Copy the first debt
 					$scope.debts.push( copyItem( item ));
@@ -39,8 +39,8 @@ angular.module( 'MainCtrl', ['ui.router'] )
 			});
 
 
-			// Debt amounts (xxxxxx) to decimal format (x,xxx.xx),
-			// date to locale format
+			// Debt amounts (xxxxxx) to decimal format (x,xxx.xx)
+			// and date to locale
 			$scope.debts.forEach( function( item ){
 				var money = '';
 

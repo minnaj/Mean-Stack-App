@@ -2,7 +2,7 @@ var User = require( './models/user' );
 var passport = require( 'passport' );
 var GoogleStrategy = require( 'passport-google-oauth' ).OAuth2Strategy;
 var GOOGLE_CLIENT_ID = "your-client-id-here";
-var GOOGLE_CLIENT_SECRET = "your-secret-here";
+var GOOGLE_CLIENT_SECRET = "your-client-secret-here";
 
 
 
@@ -24,6 +24,7 @@ passport.use( new GoogleStrategy ({
 },
 function( accessToken, refreshToken, profile, done ){
 	process.nextTick( function(){
+		
 		User.findOne({ id : profile.id }, // Search user from local DB
 		function( err, user ){
 			if( err ){
@@ -43,7 +44,7 @@ function( accessToken, refreshToken, profile, done ){
 						return done( err );
 					}
 
-					console.log( "New user saved." );
+					console.log( "New user saved" );
 					return done( null, user );
 				});
 			}

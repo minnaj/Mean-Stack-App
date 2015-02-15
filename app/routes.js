@@ -7,12 +7,12 @@ var passport = require( 'passport' );
 
 module.exports = function( app ){
 
-	// Get all debts
+	// Get all debts belonging to the user, sorted alphabetically
 	app.get( '/api/debts', function( req, res ){		
-		Debt.find( {}, null, {sort: {name: 1}}, function( err, debts ){
+		Debt.find({ 'userID': req.user.id }, null, { sort: { 'name': 1 }}, function( err, debts ){		
 			if( err ){
 				console.log( err );
-				//res.send( err );
+				res.send( err );
 			}
 		
 			res.json( debts ); // Return debts in JSON form
@@ -23,8 +23,7 @@ module.exports = function( app ){
 	// Save/change a debt
 	app.post( '/api/debts', function( req, res ){		
 		var newDebt = new Debt({
-			debtID: 0,
-			userID: 0,
+			userID: req.user.id,
 			name: req.body.name,
 			amount: req.body.amount,
 			text: req.body.description,
@@ -34,8 +33,9 @@ module.exports = function( app ){
   		newDebt.save( function( err ){
   			if( err ){
   				console.log( err );
-  				//res.send( err );
+  				res.send( err );
   			}
+  			console.log( 'New debt saved' );
   		});
 
   		res.send(200);
@@ -60,7 +60,7 @@ module.exports = function( app ){
 	app.get( '/auth/google', passport.authenticate( 'google', {
 		scope: ['https://www.googleapis.com/auth/userinfo.profile']
 	}),
-	function( req, res ){}); // Will not be called :-D
+	function( req, res ){}); // Will not be called
 
 	//Redirect back
 	app.get( '/auth/google/callback', passport.authenticate( 'google', {

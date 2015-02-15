@@ -6,6 +6,7 @@ angular.module( 'appRoutes', ['ui.router'] )
 	$urlRouterProvider.otherwise( '/' );
 
 	$stateProvider
+
 	.state( 'login', { // Login page
 		url: '/login',
 		templateUrl: '/views/login.html',
